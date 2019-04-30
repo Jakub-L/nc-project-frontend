@@ -1,0 +1,27 @@
+{
+  "name": "nc-project-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the NorthCoders final project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jakub-L/nc-project-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jakub-L/nc-project-frontend/issues"
+  },
+  "homepage": "https://github.com/Jakub-L/nc-project-frontend#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
+}
