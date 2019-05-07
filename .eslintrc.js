@@ -19,5 +19,6 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'react/jsx-filename-extension': 0,
+    camelcase: 0,
   },
 };
