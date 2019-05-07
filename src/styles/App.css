@@ -1,3 +1,63 @@
+/* VARIABLES */
+#root {
+  /* COLOURS */
+  --arup-white: #ffffff;
+  --arup-black-100: #000000;
+  --arup-black-80: #5c5c5c;
+  --arup-black-60: #666666;
+  --arup-pink-text: #d22d7d;
+  --arup-orange-text: #d63f15;
+  --arup-yellow-text: #a9660e;
+  --arup-green-text: #1d8657;
+  --arup-blue-text: #157eaa;
+  --arup-purple-text: #696eb4;
+  --arup-pink-bg: #d22d7d;
+  --arup-orange-bg: #f05023;
+  --arup-yellow-bg: #fa9b1e;
+  --arup-green-bg: #28af73;
+  --arup-blue-bg: #28aae1;
+  --arup-purple-bg: #696eb4;
+
+  /* TYPEFACES */
+  --arup-font-primary: 'Times New Roman';
+  --arup-font-secondary: Arial;
+
+  /* SELECTED SECONDARY COLOUR */
+  --arup-secondary-text: var(--arup-blue-text);
+}
+
+/* GLOBAL STYLES */
+.arup-headline {
+  font-family: var(--arup-font-primary);
+  line-height: 1.3;
+  color: var(--arup-black-100);
+}
+.arup-body {
+  font-family: var(--arup-font-primary);
+  line-height: 1.3;
+  color: var(--arup-black-80);
+}
+
+.arup-navigation {
+  font-family: var(--arup-font-secondary);
+  color: var(--arup-black-80);
+}
+.arup-navigation:hover {
+  color: var(--arup-secondary-text);
+}
+
+.arup-link {
+  font-family: var(--arup-font-primary);
+  text-decoration: underline;
+  color: var(--arup-black-100);
+}
+.arup-link:hover {
+  color: var(--arup-secondary-text);
+}
+.arup-link:visited {
+  color: var(--arup-black-100);
+}
+
 .App {
   text-align: center;
 }
