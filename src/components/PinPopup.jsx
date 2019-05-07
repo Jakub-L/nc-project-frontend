@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
+import { convertIsoDate } from '../utils/pin-utils';
 import '../styles/PinPopup.css';
 
 const PinPopup = ({ location, show, handleClose }) => {
@@ -13,9 +14,11 @@ const PinPopup = ({ location, show, handleClose }) => {
         {photo_url && <img className="modal-photograph" src={photo_url} alt="Site photograph" />}
         <h1 className="modal-username">{username}</h1>
         <div className="modal-email">
-          <a className="arup-link" href={`mailto:${user_email}`}>{user_email}</a>
+          <a className="arup-link" href={`mailto:${user_email}`}>
+            {user_email}
+          </a>
         </div>
-        <div className="modal-timestamp">{timestamp}</div>
+        <div className="modal-timestamp">{convertIsoDate(timestamp)}</div>
         {note && <p className="modal-note arup-body">{note}</p>}
       </Modal.Body>
     </Modal>
