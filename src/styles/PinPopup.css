@@ -1,0 +1,40 @@
+.PinPopup {
+  max-width: 1000px !important;
+  width: 90%;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.modal-photograph {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+.modal-user-photo {
+  height: 100%;
+  border-radius: 50%;
+}
+.modal-username {
+  margin: 0 !important;
+  font-family: var(--arup-font-primary);
+  font-size: 1.9em;
+  line-height: 1em;
+  color: var(--arup-secondary-text);
+}
+
+.modal-timestamp,
+.modal-email {
+  font-family: var(--arup-font-primary);
+  font-style: italic;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  color: var(--arup-black-100);
+}
+.modal-note {
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  border-top: 1px solid var(--arup-black-60);
+}

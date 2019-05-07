@@ -1,17 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
+import '../styles/PinPopup.css';
 
 const PinPopup = ({ location, show, handleClose }) => {
-  const { timestamp, photo_url, note } = location;
+  const {
+    timestamp, photo_url, note, username, user_email,
+  } = location;
   return (
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>{timestamp}</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <img className="modal-photograph" src={photo_url} alt="Site photograph" />
-        {note}
+    <Modal show={show} onHide={handleClose} dialogClassName="PinPopup" centered>
+      <Modal.Body className="modal-body">
+        {photo_url && <img className="modal-photograph" src={photo_url} alt="Site photograph" />}
+        <h1 className="modal-username">{username}</h1>
+        <div className="modal-email">
+          <a className="arup-link" href={`mailto:${user_email}`}>{user_email}</a>
+        </div>
+        <div className="modal-timestamp">{timestamp}</div>
+        {note && <p className="modal-note arup-body">{note}</p>}
       </Modal.Body>
     </Modal>
   );
