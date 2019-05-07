@@ -7,8 +7,8 @@ import sampleLocations from '../sample-data/locations.json';
 
 class PinMap extends Component {
   state = {
-    center: [53.795, -1.55],
-    zoom: 16,
+    center: [53.78, -1.55],
+    zoom: 14,
     attributionText: '&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     tileLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     locations: sampleLocations,
