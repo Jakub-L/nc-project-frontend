@@ -4,37 +4,55 @@
 }
 
 .modal-body {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'photo photo'
+    'note note'
+    'avatar username'
+    'avatar email'
+    'avatar timestamp';
+  align-items: center;
   padding: 1em;
 }
 
 .modal-photograph {
+  grid-area: photo;
   width: 100%;
   margin-bottom: 0.5em;
 }
-.modal-user-photo {
-  height: 100%;
-  border-radius: 50%;
+.modal-note {
+  grid-area: note;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--arup-black-60);
+}
+.modal-avatar {
+  grid-area: avatar;
+  justify-self: end;
+  width: 4em;
+  margin-right: 0.5em;
 }
 .modal-username {
-  margin: 0 !important;
+  margin: 0;
+  grid-area: username;
   font-family: var(--arup-font-primary);
-  font-size: 1.9em;
+  font-size: 1.2em;
   line-height: 1em;
   color: var(--arup-secondary-text);
 }
-
-.modal-timestamp,
-.modal-email {
+.modal-email,
+.modal-timestamp {
   font-family: var(--arup-font-primary);
-  font-style: italic;
   font-size: 0.9em;
   line-height: 1.2em;
   color: var(--arup-black-100);
 }
-.modal-note {
-  margin-top: 0.5em;
-  padding-top: 0.5em;
-  border-top: 1px solid var(--arup-black-60);
+.modal-timestamp {
+  grid-area: timestamp;
+  font-style: italic;
+}
+.modal-email {
+  grid-area: email;
 }

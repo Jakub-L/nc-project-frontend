@@ -6,20 +6,21 @@ import '../styles/PinPopup.css';
 
 const PinPopup = ({ location, show, handleClose }) => {
   const {
-    timestamp, photo_url, note, username, user_email,
+    timestamp, photo_url, note, creator, contact, user_photo,
   } = location;
   return (
     <Modal show={show} onHide={handleClose} dialogClassName="PinPopup" centered>
       <Modal.Body className="modal-body">
         {photo_url && <img className="modal-photograph" src={photo_url} alt="Site photograph" />}
-        <h1 className="modal-username">{username}</h1>
+        {note && <p className="modal-note arup-body">{note}</p>}
+        <img className="modal-avatar" src={user_photo} alt="User avatar" />
+        <h1 className="modal-username">{creator}</h1>
         <div className="modal-email">
-          <a className="arup-link" href={`mailto:${user_email}`}>
-            {user_email}
+          <a className="arup-link" href={`mailto:${contact}`}>
+            {contact}
           </a>
         </div>
         <div className="modal-timestamp">{convertIsoDate(timestamp)}</div>
-        {note && <p className="modal-note arup-body">{note}</p>}
       </Modal.Body>
     </Modal>
   );
