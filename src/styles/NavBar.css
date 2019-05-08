@@ -1,0 +1,21 @@
+.NavBar {
+  grid-area: navbar;
+  height: 50px;
+  display: flex;
+  margin-bottom: 2px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--arup-blue-bg);
+  box-shadow: 0px 2px 3px 0px var(--arup-black-80);
+}
+
+#nav-logo {
+  display: block;
+}
+
+#app-name {
+  margin-right: 0.75em;
+  font-family: var(--arup-font-primary);
+  font-size: 1.7em;
+  color: var(--arup-white);
+}

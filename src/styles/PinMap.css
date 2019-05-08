@@ -1,5 +1,6 @@
 .PinMap {
-  height: 100vh;
+  grid-area: map;
+  height: calc(100vh - 52px);
 }
 
 #map-container {
