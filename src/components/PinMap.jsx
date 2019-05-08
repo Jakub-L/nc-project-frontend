@@ -29,8 +29,8 @@ class PinMap extends Component {
   };
 
   handleLoad = () => {
-    const { endLoading } = this.props;
-    setTimeout(endLoading, 750);
+    const { endLoading, loading } = this.props;
+    if (loading) setTimeout(endLoading, 750);
   };
 
   render() {
