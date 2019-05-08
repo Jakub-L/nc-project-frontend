@@ -59,5 +59,9 @@ body {
 }
 
 .App {
-  text-align: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 52px auto;
+  grid-template-areas:
+    'navbar'
+    'map';
 }

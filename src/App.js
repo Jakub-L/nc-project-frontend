@@ -1,10 +1,11 @@
 import React from 'react';
 import './styles/App.css';
-import PinMap from './components/PinMap';
+import { PinMap, NavBar } from './components';
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <PinMap />
     </div>
   );

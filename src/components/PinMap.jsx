@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Map, Marker, TileLayer } from 'react-leaflet';
+import {
+  Map, Marker, TileLayer, ZoomControl,
+} from 'react-leaflet';
 import { PinPopup } from './index';
 import '../styles/PinMap.css';
 import sampleLocations from '../sample-data/locations.json';
@@ -37,7 +39,7 @@ class PinMap extends Component {
     } = this.state;
     return (
       <div className="PinMap">
-        <Map id="map-container" center={center} zoom={zoom}>
+        <Map id="map-container" center={center} zoom={zoom} zoomControl={false}>
           <TileLayer attribution={attributionText} url={tileLayerUrl} />
           {locations.map((location) => {
             const { longitude, latitude, pin_id } = location;
@@ -50,6 +52,7 @@ class PinMap extends Component {
             );
           })}
           <PinPopup location={modalLocation} show={showModal} handleClose={this.handleModalClose} />
+          <ZoomControl position="bottomright" />
         </Map>
       </div>
     );
