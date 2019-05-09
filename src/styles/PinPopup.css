@@ -33,6 +33,8 @@
   justify-self: end;
   width: 4em;
   margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 50%;
 }
 .modal-username {
   margin: 0;
@@ -50,6 +52,7 @@
   color: var(--arup-black-100);
 }
 .modal-timestamp {
+  margin-bottom: 0.5em;
   grid-area: timestamp;
   font-style: italic;
 }

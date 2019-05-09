@@ -4,19 +4,31 @@ import {
   Map, Marker, TileLayer, ZoomControl,
 } from 'react-leaflet';
 import { PinPopup } from './index';
+import * as api from '../utils/api';
 import '../styles/PinMap.css';
-import sampleLocations from '../sample-data/locations.json';
 
 class PinMap extends Component {
   state = {
-    center: [53.78, -1.55],
-    zoom: 14,
+    bounds: [[0, 0], [180, 0]],
+    center: [0, 0],
     attributionText: '&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     tileLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    locations: sampleLocations,
+    locations: [],
     showModal: false,
     modalLocation: {},
   };
+
+  componentDidMount() {
+    api.getPins().then((locations) => {
+      const lats = locations.map(loc => +loc.latitude);
+      const long = locations.map(loc => +loc.longitude);
+      const bounds = [
+        [Math.min(...lats) - 0.01, Math.min(...long) - 0.01],
+        [Math.max(...lats) + 0.01, Math.max(...long) + 0.01],
+      ];
+      this.setState({ locations, bounds });
+    });
+  }
 
   handlePinClick = (pin_id) => {
     const { locations } = this.state;
@@ -35,8 +47,7 @@ class PinMap extends Component {
 
   render() {
     const {
-      center,
-      zoom,
+      bounds,
       attributionText,
       tileLayerUrl,
       locations,
@@ -46,7 +57,12 @@ class PinMap extends Component {
     const { loading } = this.props;
     return (
       <div className={`PinMap${loading ? ' map-loading' : ''}`}>
-        <Map id="map-container" center={center} zoom={zoom} zoomControl={false}>
+        <Map
+          id="map-container"
+          bounds={bounds}
+          boundsOptions={{ padding: [0, 0] }}
+          zoomControl={false}
+        >
           <TileLayer attribution={attributionText} url={tileLayerUrl} onLoad={this.handleLoad} />
           {locations.map((location) => {
             const { longitude, latitude, pin_id } = location;
