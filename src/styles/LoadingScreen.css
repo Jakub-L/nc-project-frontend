@@ -21,8 +21,8 @@
 
 .LoadingScreen #spinner {
   margin: 3em;
-  height: 5em;
-  width: 5em;
+  height: 50px;
+  width: 50px;
   color: var(--arup-white);
   border-width: 0.5em;
 }
