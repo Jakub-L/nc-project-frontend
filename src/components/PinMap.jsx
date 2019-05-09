@@ -10,7 +10,6 @@ import '../styles/PinMap.css';
 class PinMap extends Component {
   state = {
     bounds: [[0, 0], [180, 0]],
-    center: [0, 0],
     attributionText: '&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     tileLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     locations: [],
