@@ -1,6 +1,11 @@
 .PinMap {
   grid-area: map;
   height: calc(100vh - 52px);
+  z-index: 2;
+}
+
+.map-loading {
+  z-index: 0;
 }
 
 #map-container {

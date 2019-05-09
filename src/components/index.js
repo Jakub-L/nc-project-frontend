@@ -1,5 +1,6 @@
+import LoadingScreen from './LoadingScreen';
+import NavBar from './NavBar';
 import PinMap from './PinMap';
 import PinPopup from './PinPopup';
-import NavBar from './NavBar';
 
-export { PinMap, PinPopup, NavBar };
+export { LoadingScreen, NavBar, PinMap, PinPopup };

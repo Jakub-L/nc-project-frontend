@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './styles/App.css';
-import { PinMap, NavBar } from './components';
+import { PinMap, NavBar, LoadingScreen } from './components';
 
-function App() {
-  return (
-    <div className="App">
-      <NavBar />
-      <PinMap />
-    </div>
-  );
+class App extends Component {
+  state = {
+    loading: true,
+  };
+
+  endLoading = () => {
+    this.setState({ loading: false });
+  };
+
+  render() {
+    const { loading } = this.state;
+    return (
+      <div className="App">
+        {loading ? <LoadingScreen /> : null}
+        {!loading ? <NavBar /> : null}
+        <PinMap endLoading={this.endLoading} loading={loading} />
+      </div>
+    );
+  }
 }
 
 export default App;

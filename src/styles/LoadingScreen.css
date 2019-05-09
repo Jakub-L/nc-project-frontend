@@ -1,0 +1,28 @@
+.LoadingScreen {
+  height: 100vh;
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: var(--arup-blue-bg);
+}
+
+.LoadingScreen #app-name {
+  margin: 0;
+  margin-top: -1.5em;
+  font-family: var(--arup-font-primary);
+  font-size: 3em;
+  letter-spacing: 0.25em;
+  color: var(--arup-white);
+}
+
+.LoadingScreen #spinner {
+  margin: 3em;
+  height: 5em;
+  width: 5em;
+  color: var(--arup-white);
+  border-width: 0.5em;
+}
