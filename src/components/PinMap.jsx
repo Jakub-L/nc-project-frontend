@@ -62,6 +62,7 @@ class PinMap extends Component {
           bounds={bounds}
           boundsOptions={{ padding: [0, 0] }}
           zoomControl={false}
+          ref="map"
         >
           <TileLayer attribution={attributionText} url={tileLayerUrl} onLoad={this.handleLoad} />
           {locations.map((location) => {
