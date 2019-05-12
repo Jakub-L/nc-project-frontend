@@ -15,6 +15,7 @@ class PinMap extends Component {
     locations: [],
     showModal: false,
     modalLocation: {},
+    imageLoading: true,
   };
 
   componentDidMount() {
@@ -37,13 +38,17 @@ class PinMap extends Component {
   };
 
   handleModalClose = () => {
-    this.setState({ showModal: false, modalLocation: {} });
+    this.setState({ showModal: false, modalLocation: {}, imageLoading: true });
   };
 
   handleLoad = () => {
     const { endLoading, loading } = this.props;
     if (loading) setTimeout(endLoading, 750);
   };
+
+  handleImageLoad = () => {
+    this.setState({ imageLoading: false });
+  }
 
   render() {
     const {
@@ -53,6 +58,7 @@ class PinMap extends Component {
       locations,
       showModal,
       modalLocation,
+      imageLoading,
     } = this.state;
     const { loading } = this.props;
     return (
@@ -75,7 +81,7 @@ class PinMap extends Component {
               />
             );
           })}
-          <PinPopup location={modalLocation} show={showModal} handleClose={this.handleModalClose} />
+          <PinPopup location={modalLocation} show={showModal} handleClose={this.handleModalClose} handleImageLoad={this.handleImageLoad} imageLoading={imageLoading} />
           <ZoomControl position="bottomright" />
         </Map>
       </div>

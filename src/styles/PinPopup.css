@@ -3,6 +3,10 @@
   width: 90%;
 }
 
+.hidden {
+  display: none;
+}
+
 .modal-body {
   display: grid;
   grid-template-columns: 1fr auto;
