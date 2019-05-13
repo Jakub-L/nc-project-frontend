@@ -31,8 +31,9 @@ class PinMap extends Component {
 
   handlePinClick = (pin_id) => {
     const { locations } = this.state;
+    const bounds = this.refs.map.leafletElement.getBounds();
     const modalLocation = locations.filter(location => location.pin_id === pin_id)[0];
-    this.setState({ showModal: true, modalLocation });
+    this.setState({ showModal: true, modalLocation, bounds });
   };
 
   handleModalClose = () => {
