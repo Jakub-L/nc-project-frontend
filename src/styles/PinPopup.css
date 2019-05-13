@@ -3,6 +3,10 @@
   width: 90%;
 }
 
+.hidden {
+  display: none;
+}
+
 .modal-body {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -21,6 +25,15 @@
   grid-area: photo;
   width: 100%;
   margin-bottom: 0.5em;
+}
+.modal-spinner {
+  grid-area: photo;
+  justify-self: center;
+  margin: 1em;
+  height: 50px;
+  width: 50px;
+  color: var(--arup-blue-bg);
+  border-width: 0.5em;
 }
 .modal-note {
   grid-area: note;
